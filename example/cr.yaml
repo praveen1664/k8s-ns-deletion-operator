@@ -1,0 +1,13 @@
+apiVersion: "Praveen.alpha.coveros.com/v1alpha1"
+kind: "DeleteNs"
+metadata:
+  name: "delete-ns-with-helm"
+  namespace: ops
+spec:
+  defaultHelmSuffix: "-yourHelmReleaseSuffix"
+  tillerNamespace: "kube-system"
+  saveIfAnnotationHas:
+    key: permanent
+    value: "true"
+  olderThan: 0
+  dryRun: true
